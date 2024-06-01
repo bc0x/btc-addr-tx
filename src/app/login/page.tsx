@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { auth, signIn } from "@/auth"
 import { redirect } from "next/navigation"
+import login from '../../../public/login.svg'
 
 export default async function Login() {
   const session = await auth()
@@ -42,7 +43,7 @@ export default async function Login() {
       </div>
       <div className="hidden bg-muted lg:block">
         <Image
-          src="/login.svg"
+          src={login}
           alt="Image"
           width="1920"
           height="1080"

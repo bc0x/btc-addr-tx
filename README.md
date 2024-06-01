@@ -4,6 +4,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the development server:
 
+.env.local to run locally
+AUTH_SECRET - `npx auth secret`
+```
+AUTH_SECRET=
+AUTH_RESEND_KEY=
+AUTH_DRIZZLE_URL=
+DRIZZLE_DATABASE_URL=
+```
+
 ```bash
 npm run dev
 # or

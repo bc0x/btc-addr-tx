@@ -67,7 +67,7 @@ export const columns: ColumnDef<Transaction>[] = [
   },
   {
     accessorKey: "date",
-    header: "Date",
+    header: "Block Height",
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("date")}</div>
     ),
@@ -85,7 +85,6 @@ export const columns: ColumnDef<Transaction>[] = [
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("amount"))
       const value = amount * 10e-9
-
       return <div className="text-right font-medium">{value}</div>
     },
   },
@@ -211,7 +210,7 @@ export function TransactionTable({ address, setBalance, setPrice }: { address: s
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  No results.
+                  NO TRANSACTIONS TO SHOW
                 </TableCell>
               </TableRow>
             )}

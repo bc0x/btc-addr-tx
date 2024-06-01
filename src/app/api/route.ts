@@ -52,7 +52,6 @@ export async function GET(request: Request) {
 
   const response = await fetch("https://mempool.space/api/v1/prices")
   const prices = await response.json()
-  console.log(prices.USD)
 
   const myAddress = await addresses.getAddress({ address: address! });
   const addressTxs = await addresses.getAddressTxs({ address: address! });

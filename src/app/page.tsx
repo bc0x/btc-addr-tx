@@ -14,7 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { TransactionTable } from "@/components/tx_table"
 import { SignOutButton } from "@/components/sign-out"
 import { AddressButton } from "@/components/address-button"
@@ -29,9 +29,9 @@ export default function Page() {
 
   function getPrice(amount: number) {
     return new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount)
+      style: "currency",
+      currency: "USD",
+    }).format(amount)
   }
 
   return (
@@ -69,20 +69,25 @@ export default function Page() {
             </SheetTrigger>
             <SheetContent side="left" className="flex flex-col">
               <nav className="grid gap-2 text-lg font-medium">
-                <Link
-                  href="#"
+                <div
                   className="flex items-center gap-2 text-lg font-semibold"
                 >
                   <Package2 className="h-6 w-6" />
-                  <span className="sr-only">Acme Inc</span>
-                </Link>
-                <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                </div>
+
+                <div
+                  className="flex items-center gap-2 text-lg font-semibold"
                 >
-                  <Home className="h-5 w-5" />
-                  Dashboard
-                </Link>
+                  <AddressButton address={address} setAddress={setAddress} />
+                </div>
+
+                <div
+                  className="flex items-center gap-2 text-lg font-semibold"
+                >
+                  <SheetClose asChild>
+                    <Button type="submit">CLOSE</Button>
+                  </SheetClose>
+                </div>
 
               </nav>
               <div className="mt-auto">

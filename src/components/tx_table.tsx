@@ -135,7 +135,7 @@ export function TransactionTable({ address, setBalance, setPrice }: { address: s
       fetchData();
     }
 
-  }, [address, setTransactions])
+  }, [address, setTransactions, setBalance, setPrice])
 
   const table = useReactTable({
     data: transactions,
